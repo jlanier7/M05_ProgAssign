@@ -1,0 +1,45 @@
+Error generated:
+
+E.F.F
+======================================================================
+ERROR: test_sum (nose2.loader.ModuleImportFailure)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_sum
+Traceback (most recent call last):
+  File "C:\Users\jclan\AppData\Local\Programs\Python\Python310\lib\site-packages\nose2\plugins\loader\discovery.py", line 204, in _find_tests_in_file
+    module = util.module_from_name(module_name)
+  File "C:\Users\jclan\AppData\Local\Programs\Python\Python310\lib\site-packages\nose2\util.py", line 76, in module_from_name
+    __import__(name)
+  File "C:\Users\jclan\Documents\College-Josh\SDEV 220\VS Code\m05\m05_ProgAssign\test_sum.py", line 5, in <module>
+    assert sum([1, 2, 2]) == 6, "Should be 6"
+AssertionError: Should be 6
+
+
+======================================================================
+FAIL: test_sum_2.test_sum_tuple
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\jclan\Documents\College-Josh\SDEV 220\VS Code\m05\m05_ProgAssign\test_sum_2.py", line 7, in test_sum_tuple
+    assert sum((1, 2, 2)) == 6, "Should be 6"
+AssertionError: Should be 6
+
+======================================================================
+FAIL: test_sum_tuple (test_sum_unittest.TestSum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\jclan\Documents\College-Josh\SDEV 220\VS Code\m05\m05_ProgAssign\test_sum_unittest.py", line 12, in test_sum_tuple
+    self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
+AssertionError: 5 != 6 : Should be 6
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=2, errors=1)
+
+
+
+*****Summary: It couldn't find the test functions in the first test_sum.py file, because they weren't functions. It still ran the interpreter
+and found the AssertionError. On the the second and third test files (test_sum_2.py and test_sum_unittest.py respectively) the testing failed with the 
+test_sum_tuple function. The AssertionError was raised, and for the second one you just saw that the result wasn't six, meaning a function
+or sum list element issue. For the third file, the AssertionError was clearer and stated what the actual outcome was, helping us go 
+back and see it was a sum list element error.******
